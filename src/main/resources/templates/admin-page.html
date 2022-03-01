@@ -10,7 +10,7 @@
 <body class="bg-light">
 <nav class="navbar navbar-dark bg-dark fixed-top d-flex justify-content-between">
             <span>
-                <span class="navbar-brand font-weight-bold" th:text="${user.getLogin}"></span>
+                <span class="navbar-brand font-weight-bold" th:text="${user.getEmailAddress()}"></span>
                 <span class="navbar-brand" th:text="' with roles:'"></span>
                 <span class="navbar-brand" th:each="role : ${user.getRoles()}" th:text="${role} + ' '"></span>
             </span>
@@ -82,7 +82,7 @@
                             <div class="form-group text-center font-weight-bold">
                                 <label for="addFirstName" class="col-form-label-sm">First name
                                     <input class="form-control form-control-sm" type="text" id="addFirstName"
-                                           name="firstName" placeholder="First name" style="max-height: 28px">
+                                           name="name" placeholder="First name" style="max-height: 28px">
                                 </label>
                                 <br>
                                 <label for="addLastName" class="col-form-label-sm">Last name
@@ -91,7 +91,7 @@
                                 </label>
                                 <br>
                                 <label for="addEmail" class="col-form-label-sm">Email
-                                    <input class="form-control form-control-sm" type="text" id="addEmail" name="email"
+                                    <input class="form-control form-control-sm" type="text" id="addEmail" name="emailAddress"
                                            placeholder="Email" style="max-height: 28px">
                                 </label>
                                 <br>
@@ -138,7 +138,7 @@
                                                 <br>
                                                 <label for="editFirstName">First name
                                                     <input class="form-control form-control-sm" type="text"
-                                                           name="firstName" id="editFirstName">
+                                                           name="name" id="editFirstName">
                                                 </label>
                                                 <br>
                                                 <label for="editLastName">Last name
@@ -148,7 +148,7 @@
                                                 <br>
                                                 <label for="editEmail">Email
                                                     <input type="email" class="form-control form-control-sm"
-                                                           name="email" id="editEmail">
+                                                           name="emailAddress" id="editEmail">
                                                 </label>
                                                 <br>
                                                 <label for="editPassword">Password
@@ -199,7 +199,7 @@
                                                 <br>
                                                 <label for="deleteFirstName">First name
                                                     <input type="text" class="form-control form-control-sm"
-                                                           name="firstName" id="deleteFirstName" readonly>
+                                                           name="name" id="deleteFirstName" readonly>
                                                 </label>
                                                 <br>
                                                 <label for="deleteLastName">Last name
@@ -209,7 +209,7 @@
                                                 <br>
                                                 <label for="deleteEmail">Email
                                                     <input type="email" class="form-control form-control-sm"
-                                                           name="email" id="deleteEmail" readonly>
+                                                           name="emailAddress" id="deleteEmail" readonly>
                                                 </label>
                                                 <br>
                                                 <label for="deleteRole">Role
@@ -245,6 +245,6 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
         integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 
-<script src="/main.js"></script>
+<script src="main.js"></script>
 </body>
 </html>

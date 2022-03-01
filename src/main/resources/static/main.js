@@ -26,9 +26,9 @@ function addUserForTable(user) {
     userInfo.append(
         '<tr>' +
         '<td>' + user.id + '</td>' +
-        '<td>' + user.firstName + '</td>' +
+        '<td>' + user.name + '</td>' +
         '<td>' + user.lastName + '</td>' +
-        '<td>' + user.email + '</td>' +
+        '<td>' + user.emailAddress + '</td>' +
         '<td>' + user.roles.map(roleUser => roleUser.name) + '</td>' +
         '<td>' +
         '<button onclick="editUserById(' + user.id + ')" class="btn btn-info edit-btn" data-toggle="modal" data-target="#edit"' +
@@ -55,9 +55,9 @@ function addNewUser() {
     }
 
     let user = {
-        firstName: document.getElementById("addFirstName").value,
+        name: document.getElementById("addFirstName").value,
         lastName: document.getElementById("addLastName").value,
-        email: document.getElementById("addEmail").value,
+        emailAddress: document.getElementById("addEmail").value,
         password: document.getElementById("addPassword").value,
         roles: roleList()
     }
@@ -100,9 +100,9 @@ function editUserById(id) {
         .then((response) => {
             response.json().then((user) => {
                 $('#editId').val(user.id);
-                $('#editFirstName').val(user.firstName);
+                $('#editFirstName').val(user.name);
                 $('#editLastName').val(user.lastName);
-                $('#editEmail').val(user.email);
+                $('#editEmail').val(user.emailAddress);
                 $('#editPassword').val(user.password);
                 $('#editRole').val(user.roles);
 
@@ -126,9 +126,9 @@ function editButton() {
 
     let editUser = {
         id: document.getElementById("editId").value,
-        firstName: document.getElementById("editFirstName").value,
+        name: document.getElementById("editFirstName").value,
         lastName: document.getElementById("editLastName").value,
-        email: document.getElementById("editEmail").value,
+        emailAddress: document.getElementById("editEmail").value,
         password: document.getElementById("editPassword").value,
         roles: roleList()
     }
@@ -163,9 +163,9 @@ function deleteUserById(id) {
         .then((response) => {
             response.json().then((user) => {
                 $('#deleteId').val(user.id)
-                $('#deleteFirstName').val(user.firstName)
+                $('#deleteFirstName').val(user.name)
                 $('#deleteLastName').val(user.lastName)
-                $('#deleteEmail').val(user.email)
+                $('#deleteEmail').val(user.emailAddress)
                 $('#deletePassword').val(user.password)
                 $('#deleteRole').val(user.roles)
             })
